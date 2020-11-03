@@ -12,6 +12,7 @@ setup(
         'requests',
         'sanic',
         'websockets',
-        'dataclasses'
+        'dataclasses',
+        'jinja2'
     ]
 )
