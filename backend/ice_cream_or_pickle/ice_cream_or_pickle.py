@@ -7,23 +7,25 @@ from jinja2 import Template
 
 
 class IceCreamOrPickle(HTTPMethodView):
-    # noinspection PyMethodMayBeStatic
-    def get(self, request):
+    @staticmethod
+    async def get(request):
         num = random.randint(0, 1)
         data_path = 'backend/ice_cream_or_pickle/data'
 
         html = open(f'{data_path}/ice_cream.html'
                     if num == 0 else
-                    f'{data_path}/pickle.html', 'r').read()
+                    f'{data_path}/pickle.html',
+                    'r', encoding='utf8').read()
 
         return response.html(html)
 
-    # noinspection PyMethodMayBeStatic
-    def template_render(self):
+    @staticmethod
+    def template_render():
         num = random.randint(0, 1)
         data_path = 'backend/ice_cream_or_pickle/data'
 
-        html_f = open(f'{data_path}/ice_cream_or_pickle.html', 'r')
+        html_f = open(f'{data_path}/ice_cream_or_pickle.html', 'r',
+                      encoding='utf8')
         html_data = Template(html_f.read())
         html_f.close()
 
@@ -31,7 +33,7 @@ class IceCreamOrPickle(HTTPMethodView):
 
         img_f = open(
             f'{data_path}/{"ice_cream" if num == 0 else "pickle"}.png',
-            'rb')
+            'rb', encoding='utf8')
         img = base64.b64encode(img_f.read())
         img = f'{img}'[2:-1]
         img_f.close()
