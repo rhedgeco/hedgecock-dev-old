@@ -1,0 +1,60 @@
+body {
+    background-color: #121212;
+}
+
+.bubble-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bubble-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.bubble-letter {
+    width: 100px;
+    padding-left: 10px;
+    animation: wobble 3.5s infinite 0s ease-in-out;
+}
+
+@media only screen and (max-width: 1100px) {
+    .bubble-letter {
+        width: 9vw;
+        padding-left: 0.9vw;
+    }
+}
+
+.bubble-letter:nth-of-type(4n+1) {
+    animation-delay: 0s;
+}
+
+.bubble-letter:nth-of-type(4n+2) {
+    animation-delay: -1s;
+}
+
+.bubble-letter:nth-of-type(4n+3) {
+    animation-delay: -2s;
+}
+
+.bubble-letter:nth-of-type(4n+4) {
+    animation-delay: -3s;
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0) translateX(0) translateY(0);
+    }
+    50% {
+        transform: rotate(-4deg) translateX(-6px) translateY(0);
+    }
+    100% {
+        transform: rotate(0) translateX(0) translateY(0);
+    }
+}
