@@ -3,14 +3,9 @@ body {
 }
 
 .bubble-box {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
 
 .bubble-holder {
@@ -24,7 +19,33 @@ body {
     animation: wobble 3.5s infinite 0s ease-in-out;
 }
 
-@media only screen and (max-width: 1100px) {
+.link-holder {
+    justify-content: center;
+    display: flex;
+}
+
+.page-link {
+    padding: 15px;
+    margin: 20px;
+    background-color: #303030;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+}
+
+.page-link:hover {
+    background-color: #404040;
+    transition: background-color 0.2s;
+}
+
+@media only screen and (max-width: 1000px) {
+    .bubble-box {
+        margin-top: 10vw;
+    }
+
     .bubble-letter {
         width: 9vw;
         padding-left: 0.9vw;
