@@ -1,81 +1,32 @@
 body {
-    background-color: #121212;
+    background-color: #0F1610;
+    padding: 5em;
 }
 
-.bubble-box {
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 40px;
+#main-title {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 5em;
+    font-weight: normal;
+    color: #D6DBE5;
+    margin: 0;
 }
 
-.bubble-holder {
-    display: flex;
-    justify-content: center;
-}
-
-.bubble-letter {
-    width: 100px;
-    padding-left: 10px;
-    animation: wobble 3.5s infinite 0s ease-in-out;
-}
-
-.link-holder {
-    justify-content: center;
+.personal-links {
     display: flex;
 }
 
-.page-link {
-    padding: 15px;
-    margin: 20px;
-    background-color: #303030;
-    font-size: 2rem;
-    color: white;
-    text-decoration: none;
-    font-family: 'Ubuntu Condensed', sans-serif;
-    box-shadow: 0 0 10px black;
-    border-radius: 10px;
+.link {
+    margin: 1em 1.5em 1em 0.5em;
+    font-size: 1.5em;
+    color: #3A5682;
+    font-family: 'Cutive Mono', monospace;
 }
 
-.page-link:hover {
-    background-color: #404040;
-    transition: background-color 0.2s;
+.link-icon {
+    position: absolute;
+    height: 1em;
 }
 
-@media only screen and (max-width: 1000px) {
-    .bubble-box {
-        margin-top: 10vw;
-    }
-
-    .bubble-letter {
-        width: 9vw;
-        padding-left: 0.9vw;
-    }
-}
-
-.bubble-letter:nth-of-type(4n+1) {
-    animation-delay: 0s;
-}
-
-.bubble-letter:nth-of-type(4n+2) {
-    animation-delay: -1s;
-}
-
-.bubble-letter:nth-of-type(4n+3) {
-    animation-delay: -2s;
-}
-
-.bubble-letter:nth-of-type(4n+4) {
-    animation-delay: -3s;
-}
-
-@keyframes wobble {
-    0% {
-        transform: rotate(0) translateX(0) translateY(0);
-    }
-    50% {
-        transform: rotate(-4deg) translateX(-6px) translateY(0);
-    }
-    100% {
-        transform: rotate(0) translateX(0) translateY(0);
-    }
+.link-text {
+    padding-left: 1.4em;
 }
