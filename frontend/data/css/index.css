@@ -1,3 +1,7 @@
+/*
+Main setup css
+ */
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -10,61 +14,22 @@ body {
     display: flex;
 }
 
-.title-area {
-
-}
-
-.content-area {
-    width: 100%;
-    display: block;
-}
-
-.title-content-spacer {
-    margin-left: 5rem;
-}
-
 @media only screen and (max-width: 1100px) {
     body {
         display: block;
     }
 }
 
-@media only screen and (min-width: 1500px) {
-    .summary-code {
-        width: 709px;
-    }
+/*
+Title and personal links
+ */
+
+.title-area {
+
 }
 
-.summary-code {
-    border: 1px solid grey;
-    border-radius: 4px;
-    font-family: 'Cutive Mono', monospace;
-    background-color: #0b0f0b;
-}
-
-.summary-code p {
-    margin: 1em;
-    color: #93969d;
-}
-
-.public-route-holder {
-    margin: 1em 0 1em 0;
-    display: flex;
-}
-
-.public-route {
-    padding: 1em;
-    border: 1px solid grey;
-    border-radius: 3px;
-    font-family: 'Cutive Mono', monospace;
-    color: #93969d;
-    background-color: #0b0f0b;
-    text-decoration: none;
-    margin-right: 1em;
-}
-
-.public-route:hover {
-    text-decoration: underline;
+.title-content-spacer {
+    margin-left: 5rem;
 }
 
 #main-title {
@@ -114,6 +79,57 @@ body {
         opacity: 1;
     }
 }
+
+@media only screen and (min-width: 1500px) {
+    .summary-code {
+        width: 709px;
+    }
+}
+
+/*
+Page content and public links
+ */
+
+.content-area {
+    width: 100%;
+    display: block;
+}
+
+.summary-code {
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-family: 'Cutive Mono', monospace;
+    background-color: #0b0f0b;
+}
+
+.summary-code p {
+    margin: 1em;
+    color: #93969d;
+}
+
+.public-route-holder {
+    margin: 1em 0 1em 0;
+    display: flex;
+}
+
+.public-route {
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-family: 'Cutive Mono', monospace;
+    color: #93969d;
+    background-color: #0b0f0b;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.public-route:hover {
+    text-decoration: underline;
+}
+
+/*
+Large monitor surprises
+ */
 
 .nice-monitor {
     position: absolute;
