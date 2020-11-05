@@ -11,6 +11,7 @@ body {
 
 .content-area {
     width: 100%;
+    display: block;
 }
 
 .title-content-spacer {
@@ -31,6 +32,7 @@ body {
 
 .summary-code {
     border: 1px solid grey;
+    border-radius: 4px;
     font-family: 'Cutive Mono', monospace;
     background-color: #0b0f0b;
 }
@@ -38,6 +40,26 @@ body {
 .summary-code p {
     margin: 1em;
     color: #93969d;
+}
+
+.public-route-holder {
+    margin: 1em 0 1em 0;
+    display: flex;
+}
+
+.public-route {
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-family: 'Cutive Mono', monospace;
+    color: #93969d;
+    background-color: #0b0f0b;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.public-route:hover {
+    text-decoration: underline;
 }
 
 #main-title {
