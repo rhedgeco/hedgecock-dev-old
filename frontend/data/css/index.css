@@ -9,6 +9,8 @@ body {
     font-weight: normal;
     color: #D6DBE5;
     margin: 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0s linear;
 }
 
 .personal-links {
@@ -20,6 +22,7 @@ body {
     font-size: 1.5em;
     color: #3A5682;
     font-family: 'Cutive Mono', monospace;
+    opacity: 0;
 }
 
 .link-icon {
@@ -29,4 +32,22 @@ body {
 
 .link-text {
     padding-left: 1.4em;
+}
+
+.link:nth-of-type(1) {
+    animation: fadeIn 1s forwards 0.25s linear;
+}
+
+.link:nth-of-type(2) {
+    animation: fadeIn 1s forwards 0.5s linear;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 1;
+        }
 }
