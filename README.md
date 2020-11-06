@@ -1,5 +1,5 @@
-# [hedgecock_dev](https://hedgecock.dev/)
 ![hedgecock_dev_logo](/readme_title.png)
+# [Hedgecock.dev](https://hedgecock.dev/)
 
 This repo is the source for the code that runs my personal website.  
 Click the title of this readme to visit!
