@@ -1,5 +1,5 @@
 from pathlib import Path
-from sanic import Sanic, response
+from sanic import Sanic
 
 from backend.route_adding import add_routes
 from backend.templating.template_router import \
