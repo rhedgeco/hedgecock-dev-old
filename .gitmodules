@@ -1,3 +1,0 @@
-[submodule "sanic_springboard"]
-	path = sanic_springboard
-	url = https://github.com/rhedgeco/sanic_springboard.git

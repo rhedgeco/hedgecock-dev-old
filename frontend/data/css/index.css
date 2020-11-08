@@ -1,74 +1,69 @@
-/*
-Main setup css
- */
+/*#0e1616*/
+/*#D6DBE5*/
+/*#3A5682*/
+/*#93969d*/
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html {
+    font-size: 24px;
+    overflow: hidden;
 }
 
-body {
-    font-size: 1rem;
-    background-color: #0e1616;
-    padding: 5rem;
-    display: flex;
-}
-
-@media only screen and (max-width: 1100px) {
-    body {
-        display: block;
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 3vw;
     }
 }
 
-/*
-Title and personal links
- */
+body {
+    background-color: #0e1616;
+    padding: 1em;
+    display: flex;
+}
+
+.title-content-spacer {
+    margin: 1.5em;
+}
 
 .title-area {
 
 }
 
-.title-content-spacer {
-    margin-left: 5rem;
-}
-
 #main-title {
-    font-family: 'Major Mono Display', monospace;
-    font-size: 5em;
-    font-weight: normal;
     color: #D6DBE5;
+    font-family: "Major Mono Display", monospace;
+    font-weight: normal;
     margin: 0;
+    font-size: 4em;
     opacity: 0;
-    animation: fadeIn 1s forwards 0s linear;
-}
-
-.personal-links {
-    display: flex;
-}
-
-.link {
-    margin: 1em 1.5em 1em 0.5em;
-    font-size: 1.5em;
-    color: #3A5682;
-    font-family: 'Cutive Mono', monospace;
-    opacity: 0;
-}
-
-.link-icon {
-    position: absolute;
-    height: 1em;
-}
-
-.link-text {
-    padding-left: 1.4em;
-}
-
-.link:nth-of-type(1) {
     animation: fadeIn 1s forwards 0.25s linear;
 }
 
+.personal-links {
+    margin-top: 1em;
+}
+
+.link {
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-right: 1em;
+    color: #3A5682;
+    opacity: 0;
+}
+
+.link-text {
+    text-decoration: underline;
+}
+
+.link-icon {
+    width: 1em;
+}
+
+.link:nth-of-type(1) {
+    animation: fadeIn 1s forwards 0.75s linear;
+}
+
 .link:nth-of-type(2) {
-    animation: fadeIn 1s forwards 0.5s linear;
+    animation: fadeIn 1s forwards 1.25s linear;
 }
 
 @keyframes fadeIn {
@@ -80,74 +75,71 @@ Title and personal links
     }
 }
 
-@media only screen and (min-width: 1500px) {
-    .summary-code {
-        width: 709px;
+.content-area {
+    font-size: 0.8em;
+    width: 820px;
+    font-family: "Cutive Mono", monospace;
+    color: #93969d;
+    display: block;
+    min-font-size: 16px;
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        display: block;
+    }
+
+    .content-area {
+        width: auto;
     }
 }
 
-/*
-Page content and public links
- */
-
-.content-area {
-    width: 100%;
-    display: block;
-}
 
 .summary-code {
+    background-color: #060a0a;
+    padding: 1em;
     border: 1px solid grey;
-    border-radius: 4px;
-    font-family: 'Cutive Mono', monospace;
-    background-color: #0b0f0b;
+    border-radius: 0.25em;
 }
 
 .summary-code p {
-    margin: 1em;
-    color: #93969d;
+    margin: 0;
 }
 
 .public-route-holder {
-    margin: 1em 0 1em 0;
-    display: flex;
+    margin-top: 2em;
 }
 
 .public-route {
     padding: 1em;
+    background-color: #060a0a;
     border: 1px solid grey;
-    border-radius: 3px;
-    font-family: 'Cutive Mono', monospace;
-    color: #93969d;
-    background-color: #0b0f0b;
+    border-radius: 0.25em;
     text-decoration: none;
-    margin-right: 1em;
+    color: #93969d;
 }
 
 .public-route:hover {
     text-decoration: underline;
 }
 
-/*
-Large monitor surprises
- */
-
 .nice-monitor {
+    width: 200px;
     position: absolute;
     left: 3250px;
-    width: 200px;
 }
 
 .bigg-monitor {
+    width: 200px;
     position: absolute;
     right: -10px;
     display: none;
-    width: 200px;
 }
 
-@media only screen and (min-width: 3440px) {
+@media only screen and (min-width: 3450px) {
     .nice-monitor {
-        right: -10px;
         left: auto;
+        right: -10px;
     }
 }
 
@@ -155,8 +147,7 @@ Large monitor surprises
     .nice-monitor {
         display: none;
     }
-
     .bigg-monitor {
-        display: unset;
+        display: block;
     }
 }
