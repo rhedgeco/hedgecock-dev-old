@@ -2,9 +2,9 @@
 #blocklyArea {
     position: absolute;
     top: 8em;
-    bottom: calc(1em + 20em);
+    height: 45em;
     left: 1em;
-    width: calc(70% - 1em);
+    width: calc(100% - 35em);
     box-shadow: 0 0 1em black;
 }
 
@@ -12,8 +12,8 @@
     position: absolute;
     right: 1em;
     top: 8em;
-    bottom: calc(1em + 20em);
-    width: calc(30% - 4em);
+    height: 43em;
+    width: 30em;
     background-color: #2B2B2B;
     box-shadow: 0 0 1em black;
     padding: 2em 1em 0 1em;
