@@ -10,7 +10,7 @@ class IceCreamOrPickle(HTTPMethodView):
     @staticmethod
     async def get(request):
         num = random.randint(0, 1)
-        data_path = 'backend/ice_cream_or_pickle/data'
+        data_path = 'routing/ice_cream_or_pickle/data'
 
         html = open(f'{data_path}/ice_cream.html'
                     if num == 0 else
@@ -22,7 +22,7 @@ class IceCreamOrPickle(HTTPMethodView):
     @staticmethod
     def template_render():
         num = random.randint(0, 1)
-        data_path = 'backend/ice_cream_or_pickle/data'
+        data_path = 'routing/ice_cream_or_pickle/data'
 
         html_f = open(f'{data_path}/ice_cream_or_pickle.html', 'r',
                       encoding='utf8')

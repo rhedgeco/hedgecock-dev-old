@@ -1,3 +1,0 @@
-[submodule "project_submodules/blockly"]
-	path = project_submodules/blockly
-	url = git@github.com:google/blockly.git
