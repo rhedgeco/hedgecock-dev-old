@@ -1,3 +1,36 @@
 body {
     background-color: #0e1616;
+    color: #D6DBE5;
+    padding: 1em;
+    overflow-x: hidden;
+}
+
+.title {
+    font-family: "Major Mono Display", monospace;
+    margin: 0 0 0.2em 0;
+    font-size: 3em;
+    white-space: nowrap;
+}
+
+.sub-title {
+    font-family: 'Cutive Mono', monospace;
+    padding-left: 0.5em;
+    font-size: 1.5em;
+    margin: 0;
+    color: #3A5682;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 1.5em;
+    white-space: nowrap;
+}
+
+.sub-title > * {
+    margin: 0;
+}
+
+.go-home {
+    position: absolute;
+    right: 1em;
+    top: 1em;
 }

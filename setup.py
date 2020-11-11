@@ -13,6 +13,8 @@ setup(
         'sanic',
         'websockets',
         'dataclasses',
-        'jinja2'
+        'jinja2',
+        'qiskit',
+        'qiskit[visualization]'
     ]
 )

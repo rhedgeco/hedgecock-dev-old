@@ -1,0 +1,79 @@
+
+#blocklyArea {
+    position: absolute;
+    top: 8em;
+    bottom: calc(1em + 20em);
+    left: 1em;
+    width: calc(70% - 1em);
+    box-shadow: 0 0 1em black;
+}
+
+#codeArea {
+    position: absolute;
+    right: 1em;
+    top: 8em;
+    bottom: calc(1em + 20em);
+    width: calc(30% - 4em);
+    background-color: #2B2B2B;
+    box-shadow: 0 0 1em black;
+    padding: 2em 1em 0 1em;
+}
+
+#executeCode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Cutive Mono", monospace;
+    cursor: pointer;
+    padding: 0.5em;
+    background-color: #1c4320;
+    border: 1px solid grey;
+}
+
+#copyCode {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: "Cutive Mono", monospace;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5em;
+    background-color: #444444;
+    border: 1px solid grey;
+}
+
+#executeCode:hover {
+    text-decoration: underline;
+    background-color: #265a2b;
+}
+
+#copyCode:hover {
+    background-color: #555555;
+}
+
+.blocklySvg {
+    background-color: #171f1f !important;
+}
+
+.blocklyFlyoutBackground {
+    fill: #273636 !important;
+}
+
+.blocklyMainBackground {
+    stroke: #5b7372 !important;
+}
+
+.blocklyToolboxDiv {
+    background-color: #273636 !important;
+}
+
+.blockly-logo {
+    height: 2em;
+    margin-left: 0.5em;
+}
+
+.qiskit-logo {
+    height: 1.4em;
+    margin-left: 0.5em;
+    padding-top: 0.2em;
+}
