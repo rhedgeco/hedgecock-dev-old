@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="./static/css/darcula.css">
     <link rel="stylesheet" href="./static/css/qnd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Major+Mono+Display&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-<h1 class="title">quAntuM node desiGneR</h1>
+<h1 class="main-title">quAntuM node desiGneR</h1>
 <div class="sub-title">
     <p>Powered by</p>
     <a href="https://qiskit.org">
@@ -18,15 +20,22 @@
     </a>
 </div>
 
-<div id="nodeArea"></div>
+<div id="reteArea">
+    <div id="rete"></div>
+    <button id="reCenter"><i class="material-icons">home</i></button>
+</div>
 
-<script src="./static/js/highlight.pack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/rete@1.4.5-rc.1/build/rete.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/rete-vue-render-plugin@0.5.0/build/vue-render-plugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/rete-connection-plugin@0.9.0/build/connection-plugin.min.js"></script>
-<script>
-    hljs.configure({useBR: true});
-    hljs.initHighlightingOnLoad();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/alight@0.14.1/alight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-context-menu-plugin@0.5.2/build/context-menu-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-area-plugin@0.2.1/build/area-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-comment-plugin@0.3.0/build/comment-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-history-plugin@0.1.0/build/history-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-connection-mastery-plugin@0.1.0/build/connection-mastery-plugin.min.js"></script>
+<script src="./static/js/rete_handler.js"></script>
 </body>
 </html>
