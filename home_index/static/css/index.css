@@ -107,7 +107,7 @@ body {
 }
 
 .public-route-holder {
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     flex-wrap: wrap;
 }
@@ -120,6 +120,7 @@ body {
     text-decoration: none;
     color: #93969d;
     white-space: nowrap;
+    margin: 0.2em;
 }
 
 .public-route:hover {
