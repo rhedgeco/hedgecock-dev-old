@@ -96,7 +96,7 @@ body {
 
 
 .summary-code {
-    background-color: #060a0a;
+    background-color: #121115;
     padding: 1em;
     border: 1px solid grey;
     border-radius: 0.25em;
@@ -114,7 +114,7 @@ body {
 
 .public-route {
     padding: 1em;
-    background-color: #060a0a;
+    background-color: #121115;
     border: 1px solid grey;
     border-radius: 0.25em;
     text-decoration: none;
