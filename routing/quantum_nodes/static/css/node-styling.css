@@ -1,0 +1,15 @@
+.node.quantum-circuit .output-title {
+    color: #FCC2BD !important;
+}
+
+.node.measure .input-title {
+    color: #FCC2BD !important;
+}
+
+.node.measure .output-title {
+    color: #95E6D8 !important;
+}
+
+.node.circuit-output .input-title {
+    color: #95E6D8 !important;
+}

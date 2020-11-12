@@ -28,24 +28,32 @@
     font-family: "Cutive Mono", monospace !important;
 }
 
-.connection .main-path {
-    stroke-width: 2px !important;
+.connection.socket-output-quantum-bit .main-path {
+    stroke-width: 3px !important;
     stroke: #fcc2bd !important;
+}
+
+.connection.socket-output-classical-bit .main-path {
+    stroke-width: 3px !important;
+    stroke: #95e6d8 !important;
+}
+
+.pin {
+    background: linear-gradient(#1F2125, #18191E) !important;
+    border: 1px solid #7b7f8f !important;
 }
 
 .input-title {
     font-family: "Cutive Mono", monospace !important;
-    color: #dfaaff !important;
 }
-.socket.output {
+.socket.quantum-bit {
     background: linear-gradient(to bottom right, #FC8275, #8623CB) !important;
 }
 
 .output-title {
     font-family: "Cutive Mono", monospace !important;
-    color: #fcc2bd !important;
 }
-.socket.input {
+.socket.classical-bit {
     background: linear-gradient(to bottom right, #38D3B9, #3359D7) !important;
 }
 
