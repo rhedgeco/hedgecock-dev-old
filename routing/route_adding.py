@@ -27,3 +27,5 @@ def add_routes(app: Sanic):
                str((quantum_nodes_path / 'static').absolute()))
     app.add_route(quantum_nodes.designer, '/quantum_nodes')
     app.add_route(quantum_nodes.designer, '/quantum_nodes/designer')
+    app.add_route(quantum_nodes.create_quantum_diagram,
+                  '/quantum_nodes/create', ['POST'])

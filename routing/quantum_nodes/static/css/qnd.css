@@ -7,11 +7,16 @@
 #reteArea {
     margin: 1em;
     width: calc(100% - 2em);
-    height: calc(100vh - 15em);
+    height: calc(100vh - 30em);
     box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.5);
     background-color: #15161A;
     position: relative;
     overflow: hidden;
+}
+
+#responseDiagram {
+    font-family: "Cutive Mono", monospace;
+    padding: 0 1em 0 1em;
 }
 
 .node {

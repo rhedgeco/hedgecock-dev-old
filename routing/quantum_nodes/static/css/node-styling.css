@@ -1,15 +1,24 @@
+:root {
+    --qport: #FCC2BD;
+    --cport: #95E6D8;
+}
+
 .node.quantum-circuit .output-title {
-    color: #FCC2BD !important;
+    color: var(--qport) !important;
 }
 
 .node.measure .input-title {
-    color: #FCC2BD !important;
+    color: var(--qport) !important;
 }
 
 .node.measure .output-title {
-    color: #95E6D8 !important;
+    color: var(--cport) !important;
 }
 
 .node.circuit-output .input-title {
-    color: #95E6D8 !important;
+    color: var(--cport) !important;
+}
+
+.node.hadamard-gate .input-title, .output-title {
+    color: var(--qport) !important;
 }
