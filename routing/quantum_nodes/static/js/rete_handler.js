@@ -39,6 +39,7 @@ class CircuitOutput extends Rete.Node {
     editor.use(ConnectionReroutePlugin.default);
     editor.use(VueRenderPlugin.default);
     editor.use(AreaPlugin);
+    editor.use(KeyboardPlugin);
 
     var qc = new QuantumCircuit(2);
     var m1 = new Measure();
