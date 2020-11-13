@@ -19,9 +19,11 @@ def add_routes(app: Sanic):
     app.add_route(index, '/')
     app.add_route(favicon, '/favicon.ico')
 
+    # Ice cream or pickle
     app.add_route(ice_cream_or_pickle.IceCreamOrPickle.as_view(),
                   '/ice_cream_or_pickle')
 
+    # Quantum node designer
     quantum_nodes_path = Path('./routing') / 'quantum_nodes'
     app.static('/quantum_nodes/static',
                str((quantum_nodes_path / 'static').absolute()))

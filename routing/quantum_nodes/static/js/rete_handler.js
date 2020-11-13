@@ -49,6 +49,7 @@ class CircuitOutput extends Rete.Node {
 
 (async () => {
     var container = document.querySelector('#rete');
+    var circuitDisplay = document.querySelector('#circuitDiagram');
 
     var editor = new Rete.NodeEditor('qnd@0.1.0', container);
     editor.use(ConnectionPlugin.default);
@@ -93,7 +94,7 @@ class CircuitOutput extends Rete.Node {
             body: form
         });
         response = await response.json();
-        alert(JSON.stringify(response));
+        circuitDisplay.innerText = response['circuit'];
     });
 
     editor.view.resize();

@@ -15,6 +15,8 @@ setup(
         'dataclasses',
         'jinja2',
         'qiskit',
-        'qiskit[visualization]'
+        'qiskit[visualization]',
+        'twilio',
+        'filelock'
     ]
 )

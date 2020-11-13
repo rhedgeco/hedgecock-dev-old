@@ -3,6 +3,7 @@ body {
     color: #D6DBE5;
     padding: 1em;
     overflow-x: hidden;
+    font-family: "Cutive Mono", monospace;
 }
 
 .main-title {
