@@ -6,10 +6,8 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Dict, List
 
-import qiskit
-from qiskit import QuantumCircuit
 from sanic import response
-from sanic.exceptions import InvalidUsage, ServerError
+from sanic.exceptions import InvalidUsage
 
 
 @dataclass
