@@ -6,8 +6,8 @@
 
 #reteArea {
     margin: 1em;
-    width: calc(100% - 2em);
-    height: calc(100vh - 30em);
+    width: calc(90% - 20em);
+    height: calc(90vh - 15em);
     box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.5);
     background-color: #15161A;
     position: relative;

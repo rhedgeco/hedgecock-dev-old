@@ -4,8 +4,8 @@ const cBitSocket = new Rete.Socket('Classical Bit');
 function qbitInOut(node, i) {
     var bit = 'qbit';
     if (i > 0 && i !== null) bit = bit + '-' + i;
-    let qin = new Rete.Input(bit, 'Quantum', qBitSocket, false);
-    let qout = new Rete.Output(bit, 'Quantum', qBitSocket, false);
+    var qin = new Rete.Input(bit, bit, qBitSocket, false);
+    var qout = new Rete.Output(bit, bit, qBitSocket, false);
     node.addInput(qin);
     node.addOutput(qout);
 }
@@ -13,8 +13,8 @@ function qbitInOut(node, i) {
 class QuantumCircuit extends Rete.Node {
     constructor(qbits) {
         super('Quantum Circuit');
-        for (let i = 0; i < qbits; i++) {
-            let qout = new Rete.Output('qbit' + i, 'Quantum-' + i, qBitSocket, false);
+        for (var i = 0; i < qbits; i++) {
+            var qout = new Rete.Output('qbit' + i, 'qbit-' + i, qBitSocket, false);
             this.addOutput(qout);
         }
     }
@@ -27,11 +27,25 @@ class HadamardGate extends Rete.Node {
     }
 }
 
+class ControlledX extends Rete.Node {
+    constructor() {
+        super('Controlled X');
+        var contIn = new Rete.Input('qbit-0', 'control in', qBitSocket, false);
+        var contOut = new Rete.Output('qbit-0', 'control out', qBitSocket, false);
+        var xIn = new Rete.Input('qbit-1', 'X in', qBitSocket, false);
+        var xOut = new Rete.Output('qbit-1', 'X out', qBitSocket, false);
+        this.addInput(contIn);
+        this.addInput(xIn);
+        this.addOutput(contOut);
+        this.addOutput(xOut);
+    }
+}
+
 class Measure extends Rete.Node {
     constructor() {
         super('Measure');
-        let qin = new Rete.Input('qbit', 'Quantum', qBitSocket, false);
-        let cout = new Rete.Output('cbit', 'Classic', cBitSocket, false);
+        var qin = new Rete.Input('qbit', 'qbit', qBitSocket, false);
+        var cout = new Rete.Output('cbit', 'cbit', cBitSocket, false);
         this.addInput(qin);
         this.addOutput(cout);
     }
@@ -40,8 +54,8 @@ class Measure extends Rete.Node {
 class CircuitOutput extends Rete.Node {
     constructor(cbits) {
         super('Circuit Output');
-        for (let i = 0; i < cbits; i++) {
-            let cin = new Rete.Input('cbit' + i, 'Classic-' + i, cBitSocket, false);
+        for (var i = 0; i < cbits; i++) {
+            var cin = new Rete.Input('cbit' + i, 'cbit-' + i, cBitSocket, false);
             this.addInput(cin);
         }
     }
@@ -61,30 +75,37 @@ class CircuitOutput extends Rete.Node {
     [
         new QuantumCircuit(),
         new HadamardGate(),
+        new ControlledX(),
         new Measure(),
-        new CircuitOutput()
+        new CircuitOutput(),
     ].map(n => editor.register(n));
 
     var qc = new QuantumCircuit(2);
     var h = new HadamardGate();
+    var cx = new ControlledX();
     var m1 = new Measure();
     var m2 = new Measure();
     var co = new CircuitOutput(2);
     h.position = [250, -50];
-    m1.position = [525, 30];
-    m2.position = [425, 170];
-    co.position = [800, 200];
+    cx.position = [525, 35];
+    m1.position = [825, 30];
+    m2.position = [825, 170];
+    co.position = [1100, 100];
     editor.addNode(qc);
     editor.addNode(h);
+    editor.addNode(cx);
     editor.addNode(m1);
     editor.addNode(m2);
     editor.addNode(co);
-    editor.connect(qc.outputs.get('qbit1'), m2.inputs.get('qbit'));
+    editor.connect(qc.outputs.get('qbit1'), cx.inputs.get('qbit-1'));
     editor.connect(qc.outputs.get('qbit0'), h.inputs.get('qbit'));
-    editor.connect(h.outputs.get('qbit'), m1.inputs.get('qbit'));
+    editor.connect(h.outputs.get('qbit'), cx.inputs.get('qbit-0'));
+    editor.connect(cx.outputs.get('qbit-0'), m1.inputs.get('qbit'));
+    editor.connect(cx.outputs.get('qbit-1'), m2.inputs.get('qbit'));
     editor.connect(m1.outputs.get('cbit'), co.inputs.get('cbit0'));
     editor.connect(m2.outputs.get('cbit'), co.inputs.get('cbit1'));
 
+    // Update circuit on backend whenever there is a change
     editor.on('process nodecreated noderemoved connectioncreated connectionremoved', async () => {
         var json = JSON.stringify(editor.toJSON());
         var form = new FormData();
