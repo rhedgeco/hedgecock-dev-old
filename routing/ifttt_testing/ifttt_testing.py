@@ -7,7 +7,7 @@ from sanic.views import HTTPMethodView
 class IftttTesting(HTTPMethodView):
     @staticmethod
     async def test_setup(request):
-        print(request.headers)
+        print(request)
 
         json = {
             'data': {
