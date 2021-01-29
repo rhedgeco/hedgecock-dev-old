@@ -23,5 +23,6 @@ def add_routes(app: Sanic):
     app.add_route(ice_cream_or_pickle.IceCreamOrPickle.as_view(),
                   '/ice_cream_or_pickle')
 
-    app.add_route(ifttt_testing.IftttTesting.as_view(),
-                  '/test_api/ifttt/v1/test/setup', methods={'POST'})
+    # IFTTT testing routes
+    app.add_route(ifttt_testing.IftttTesting.status,
+                  'test_api/ifttt/v1/status', 'POST')
