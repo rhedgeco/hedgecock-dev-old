@@ -24,4 +24,4 @@ def add_routes(app: Sanic):
                   '/ice_cream_or_pickle')
 
     app.add_route(ifttt_testing.IftttTesting.as_view(),
-                  '/testing/ifttt/test/setup')
+                  '/testing/ifttt/test/setup', methods={'POST'})
