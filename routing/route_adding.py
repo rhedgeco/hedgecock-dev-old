@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from sanic import Sanic, response
 
@@ -25,5 +26,12 @@ def add_routes(app: Sanic):
     # IFTTT testing routes
     @app.route('/test_api/ifttt/v1/status', methods=['GET'])
     def ifttt_status(request):
-        print(request.headers)
-        return response.text('ONLINE!')
+        headers = request.headers
+        channel_key = headers['ifttt-channel-key']
+
+        r = response.text('ONLINE!')
+        if channel_key != os.environ.get('IFTTT_SERVICE_KEY'):
+            r = response.text('ERROR!')
+            r.status = 401
+
+        return r
