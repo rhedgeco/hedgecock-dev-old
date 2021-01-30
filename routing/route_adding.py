@@ -2,7 +2,6 @@ from pathlib import Path
 from sanic import Sanic, response
 
 import routing.ice_cream_or_pickle.ice_cream_or_pickle as ice_cream_or_pickle
-from routing.ifttt_testing import ifttt_testing
 
 
 def add_routes(app: Sanic):
@@ -24,6 +23,6 @@ def add_routes(app: Sanic):
                   '/ice_cream_or_pickle')
 
     # IFTTT testing routes
-    app.add_route(handler=ifttt_testing.IftttTesting.status,
-                  uri='test_api/ifttt/v1/status',
-                  methods={'POST'})
+    @app.route('/test_api/ifttt/v1/setup', methods=['GET'])
+    def ifttt_status(request):
+        return response.text('ONLINE!')
