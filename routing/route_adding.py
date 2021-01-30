@@ -25,4 +25,5 @@ def add_routes(app: Sanic):
     # IFTTT testing routes
     @app.route('/test_api/ifttt/v1/status', methods=['GET'])
     def ifttt_status(request):
+        print(request.headers)
         return response.text('ONLINE!')
