@@ -21,8 +21,3 @@ def add_routes(app: Sanic):
     # Ice cream or pickle
     app.add_route(ice_cream_or_pickle.IceCreamOrPickle.as_view(),
                   '/ice_cream_or_pickle')
-
-    # IFTTT testing routes
-    @app.route('/test_api/ifttt/v1/setup', methods=['GET'])
-    def ifttt_status(request):
-        return response.text('ONLINE!')
